@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentationTool.Shared", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentationTool.Tests", "DocumentationTool.Tests\DocumentationTool.Tests.csproj", "{B322D539-1797-42FE-B29D-B8E86C870687}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototypes", "Prototypes", "{D8D4BE11-B2DB-49CA-825E-FC5FEBC42B33}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Tobia\Desktop\AutomationTools\AutomationTools.DocumentationTool.Tests\appsettings.test.json = C:\Users\Tobia\Desktop\AutomationTools\AutomationTools.DocumentationTool.Tests\appsettings.test.json
+		C:\Users\Tobia\Desktop\AutomationTools\AutomationTools.DocumentationTool.Tests\msedgedriver.exe = C:\Users\Tobia\Desktop\AutomationTools\AutomationTools.DocumentationTool.Tests\msedgedriver.exe
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentationTool.Prototypes.Tests2", "DocumentationTool.Prototypes.Tests2\DocumentationTool.Prototypes.Tests2.csproj", "{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentationTool.Prototypes.Tests1", "DocumentationTool.Prototypes.Tests1\DocumentationTool.Prototypes.Tests1.csproj", "{6EB61395-930B-4EF0-A89A-5D99D5869A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +33,22 @@ Global
 		{B322D539-1797-42FE-B29D-B8E86C870687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B322D539-1797-42FE-B29D-B8E86C870687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B322D539-1797-42FE-B29D-B8E86C870687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB61395-930B-4EF0-A89A-5D99D5869A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB61395-930B-4EF0-A89A-5D99D5869A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB61395-930B-4EF0-A89A-5D99D5869A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB61395-930B-4EF0-A89A-5D99D5869A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B322D539-1797-42FE-B29D-B8E86C870687} = {53D52A68-9836-43A3-AAA1-EAED3705A58B}
+		{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547} = {D8D4BE11-B2DB-49CA-825E-FC5FEBC42B33}
+		{6EB61395-930B-4EF0-A89A-5D99D5869A94} = {D8D4BE11-B2DB-49CA-825E-FC5FEBC42B33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C254922-4F06-460E-8476-AF30D98AE887}
