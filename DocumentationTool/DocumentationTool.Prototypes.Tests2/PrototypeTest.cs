@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DocumentationTool.Shared.Common;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
@@ -9,63 +10,6 @@ using System.Linq;
 
 namespace DocumentationTool.Prototypes.Tests2
 {
-    public enum AuthenticationMethod
-    {
-        None = 0,
-        UNI,
-        NEMID,
-        MITID
-    }
-
-    public static class ConfigurationExtentions
-    {
-        /// <summary>
-        /// Converts the assigned timeout value.
-        /// <example>
-        /// <code>
-        /// <para /> Example:
-        /// <para /> TimeSpan s = configuration.ConvertTimeoutToTimeSpan(nameof(configuration.PageLoadTimeOutInSeconds));
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="configuration"></param>
-        /// <param name="property">Is the <see cref="nameof"/> of the property that needs to be converted.</param>
-        /// <returns>A <see cref="TimeSpan"/> of the given value if valid.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Is thrown if the given <paramref name="property"/> is out of range.</exception>
-        public static TimeSpan ConvertTimeoutToTimeSpan(this Configuration configuration, string property) => property switch
-        {
-            nameof(configuration.PageLoadTimeoutInSeconds) => TimeSpan.FromSeconds(configuration.PageLoadTimeoutInSeconds),
-            nameof(configuration.ImplicitWaitTimeoutInSeconds) => TimeSpan.FromSeconds(configuration.ImplicitWaitTimeoutInSeconds),
-            _ => throw new ArgumentOutOfRangeException(nameof(property), "Given name is not a valid property.")
-        };
-    }
-
-    public static class EnumExtentions
-    {
-        /// <summary>
-        /// Gets the name of the enum.
-        /// </summary>
-        /// <param name="method"></param>
-        /// <returns>A <see cref="string"/> representing the name of the <see cref="AuthenticationMethod"/>.</returns>
-        public static string Name(this AuthenticationMethod method) =>
-            method switch
-            {
-                AuthenticationMethod.None => nameof(AuthenticationMethod.None),
-                AuthenticationMethod.UNI => nameof(AuthenticationMethod.UNI),
-                AuthenticationMethod.NEMID => nameof(AuthenticationMethod.NEMID),
-                AuthenticationMethod.MITID => nameof(AuthenticationMethod.MITID)
-            };
-
-        public static int Value(this AuthenticationMethod method) =>
-            method switch
-            {
-                AuthenticationMethod.None => (int)AuthenticationMethod.None,
-                AuthenticationMethod.UNI => (int)AuthenticationMethod.UNI,
-                AuthenticationMethod.NEMID => (int)AuthenticationMethod.NEMID,
-                AuthenticationMethod.MITID => (int)AuthenticationMethod.MITID,
-            };
-    }
-
     public class Settings
     {
         public Configuration Configuration { get; set; }
@@ -113,8 +57,8 @@ namespace DocumentationTool.Prototypes.Tests2
 
             // Configure timeouts.
             ITimeouts timeouts = _webDriver.Manage().Timeouts();
-            timeouts.ImplicitWait = _settings.Configuration.ConvertTimeoutToTimeSpan(nameof(_settings.Configuration.ImplicitWaitTimeoutInSeconds));
-            timeouts.PageLoad = _settings.Configuration.ConvertTimeoutToTimeSpan(nameof(_settings.Configuration.PageLoadTimeoutInSeconds));
+            timeouts.ImplicitWait = TimeSpan.FromSeconds(5);
+            timeouts.PageLoad = TimeSpan.FromSeconds(5);
         }
 
         [OneTimeTearDown]
@@ -148,9 +92,9 @@ namespace DocumentationTool.Prototypes.Tests2
         {
             // Arrange
             IWebElement authMethodElement = _webDriver.FindElements(By.TagName("button"))
-                .FirstOrDefault(e => e.Text.Contains(_settings.Authentication.Method.Name(), StringComparison.OrdinalIgnoreCase));
+                .FirstOrDefault(e => e.Text.Contains(_settings.Authentication.Method.GetName(), StringComparison.OrdinalIgnoreCase));
 
-            Assert.NotZero(_settings.Authentication.Method.Value());
+            Assert.NotZero(_settings.Authentication.Method.GetValue());
             Assert.IsNotNull(authMethodElement);
             authMethodElement.Click();
         }
