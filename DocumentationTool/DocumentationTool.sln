@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53D52A68-9836-43A3-AAA1-EAED3705A58B}"
 EndProject
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototypes", "Prototypes", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentationTool.Prototypes.Tests2", "DocumentationTool.Prototypes.Tests2\DocumentationTool.Prototypes.Tests2.csproj", "{86DCFFF0-AF34-43A7-BB4E-5D587B2D2547}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentationTool.Prototypes.Tests1", "DocumentationTool.Prototypes.Tests1\DocumentationTool.Prototypes.Tests1.csproj", "{6EB61395-930B-4EF0-A89A-5D99D5869A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentationTool.Prototypes.Tests", "DocumentationTool.Prototypes.Tests1\DocumentationTool.Prototypes.Tests.csproj", "{6EB61395-930B-4EF0-A89A-5D99D5869A94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
