@@ -24,5 +24,16 @@ namespace DocumentationTool.Shared.Helpers
 
             return wait.Until<bool>(driver => driver.Url.Contains(relativePath));
         }
+
+        public static bool GoToUrl(this IWebDriver webDriver, string goToUrl, string relativePath)
+        {
+            Uri url = new(goToUrl + relativePath);
+
+            webDriver.Navigate().GoToUrl(url);
+
+            WebDriverWait wait = new(webDriver, TimeSpan.FromSeconds(_helperTimeout));
+
+            return wait.Until<bool>(driver => driver.Url.Contains(relativePath));
+        }
     }
 }
